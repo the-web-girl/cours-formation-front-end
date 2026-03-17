@@ -1,11 +1,89 @@
 <!DOCTYPE html>
+<!-- DOCTYPE : Déclare au navigateur que ce fichier est une page HTML5.
+     Doit TOUJOURS être la toute première ligne du fichier. -->
+
 <html lang="en">
+<!-- <html> : Balise racine qui englobe TOUT le contenu de la page.
+     lang="en" : Indique la langue de la page (ici l'anglais "en", pour le français ce serait "fr").
+     Utile pour les lecteurs d'écran et le référencement (SEO). -->
+
 <head>
+    <!-- <head> : Contient les informations techniques de la page.
+         Ces informations ne sont PAS visibles par l'utilisateur dans le navigateur.
+         C'est ici qu'on configure la page et qu'on lie les ressources externes (CSS, polices…). -->
+
     <meta charset="UTF-8">
+    <!-- <meta charset> : Définit l'encodage des caractères.
+         UTF-8 permet d'afficher tous les caractères spéciaux : accents (é, à, ù),
+         symboles (€, ©), etc. Sans ça, ces caractères s'afficheraient mal. -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cours formation front-end</title>
+    <!-- <meta viewport> : Rend la page responsive (adaptée aux mobiles).
+         width=device-width → la largeur de la page s'adapte à l'écran de l'appareil.
+         initial-scale=1.0 → pas de zoom automatique au chargement. -->
+
+    <title>cours foration front-end</title>
+    <!-- <title> : Texte affiché dans l'onglet du navigateur.
+         C'est aussi le titre qui apparaît dans les résultats Google. -->
+
 </head>
+
 <body>
-    
+    <!-- <body> : Contient TOUT ce qui est visible sur la page par l'utilisateur.
+         Tout ce qu'on veut afficher (textes, images, boutons…) va ici. -->
+
+    <h1>Titre de niveau 1</h1>
+    <!-- <h1> : Titre principal de la page (le plus important).
+         Il existe 6 niveaux : <h1> jusqu'à <h6>, du plus grand au plus petit.
+         Bonne pratique : n'utiliser qu'UN SEUL <h1> par page (important pour le SEO). -->
+
+    <hr>
+    <!-- <hr> : Ligne horizontale de séparation.
+         C'est une balise auto-fermante (pas besoin de </hr>).
+         Utilisée pour séparer visuellement des sections de contenu. -->
+
+    <h3>Titre de niveau 3</h3>
+    <!-- <h3> : Titre de niveau 3, plus petit que <h1> et <h2>.
+         Attention : on a sauté le <h2>, ce qui n'est pas recommandé
+         pour l'accessibilité. Idéalement, respecter l'ordre h1 → h2 → h3. -->
+
+    <p>Lorem ipsum dolor sit amet...</p>
+    <!-- <p> : Balise "paragraph", pour écrire un bloc de texte.
+         Le navigateur ajoute automatiquement un espace (marge) avant et après.
+         "Lorem ipsum..." est un faux texte de remplissage classique utilisé
+         en design pour simuler du contenu avant d'avoir le vrai texte. -->
+
+    <hr>
+    <!-- Deuxième ligne de séparation, même principe que la première. -->
+
+    <ul>
+        <!-- <ul> : "Unordered List" = liste NON ordonnée (à puces).
+             Pour une liste numérotée, on utiliserait <ol> ("Ordered List"). -->
+
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+        <!-- <li> : "List Item" = un élément de la liste.
+             Doit toujours être à l'intérieur d'un <ul> ou d'un <ol>.
+             Chaque <li> sera affiché avec un point (•) devant. -->
+
+    </ul>
+
+    <img src="./image1.jpg" alt="" width="300" height="auto">
+    <!-- <img> : Affiche une image. Balise auto-fermante (pas de </img>).
+         src="./image1.jpg" → chemin vers l'image.
+             "./" signifie "dans le même dossier que ce fichier HTML".
+         alt="" → texte alternatif affiché si l'image ne charge pas,
+             et lu par les lecteurs d'écran (accessibilité).
+             ⚠️ Laisser alt vide est déconseillé : mieux vaut décrire l'image
+             ex: alt="Photo d'un chien dans un jardin".
+         width="300" → largeur fixée à 300 pixels.
+         height="auto" → ⚠️ "auto" ne fonctionne pas en attribut HTML pur !
+             Pour un ratio automatique, il faut plutôt utiliser le CSS :
+             style="width: 300px; height: auto;" -->
+
 </body>
 </html>
+<!-- Fermeture de la balise <html> : fin du document.
+     Chaque balise ouvrante (<html>, <body>, etc.) doit avoir sa balise fermante. -->
