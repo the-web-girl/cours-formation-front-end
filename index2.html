@@ -25,23 +25,84 @@
     <title>cours foration front-end</title>
     <!-- <title> : Texte affiché dans l'onglet du navigateur.
          C'est aussi le titre qui apparaît dans les résultats Google. -->
+    
     <link rel="stylesheet" href="./style.css">
-
+    <!-- <link> : Balise auto-fermante qui permet de lier un fichier externe à la page HTML.
+         rel="stylesheet" → indique que le fichier lié est une feuille de style CSS.
+         href="./style.css" → chemin vers le fichier CSS.
+             "./" signifie "dans le même dossier que ce fichier HTML".
+         C'est comme ça qu'on sépare le HTML (structure) du CSS (apparence). -->
 </head>
 
 <body>
     <!-- <body> : Contient TOUT ce qui est visible sur la page par l'utilisateur.
          Tout ce qu'on veut afficher (textes, images, boutons…) va ici. -->
-        <div class="carte-img">
-            <div class="bloc-img">
-                <img src="./image1.jpg" alt="machine à écrire" class="img-responsive">
-            </div>
-            <h3>Leçons d'édition de nouvelles</h3>
-            <hr>
-            <a href="">Découvrir la séance</a>
-            <a href="">Retour à l'accueil</a>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam tempore iure dolore recusandae repellendus. Eum iure, rerum sed reiciendis totam facere. Doloremque consequuntur velit quisquam.</p>
+    <div class="carte-img">
+    <!-- <div> : Balise "division", c'est un conteneur générique INVISIBLE.
+         Elle ne fait rien visuellement par défaut, mais elle sert à
+         REGROUPER des éléments ensemble pour les styliser en CSS.
+         
+         class="carte-img" → on lui donne un nom de classe.
+         Une classe, c'est une étiquette qu'on colle sur une balise.
+         Dans le fichier CSS, on pourra cibler cette étiquette avec .carte-img { }
+         pour lui appliquer des styles (couleur, bordure, taille…).
+         
+         Un même nom de classe peut être utilisé sur PLUSIEURS balises.
+            Un attribut id="..." en revanche doit être UNIQUE sur la page. -->
+
+        <div class="bloc-img">
+        <!-- Deuxième <div> imbriquée à l'intérieur de la première.
+             On peut imbriquer autant de <div> que nécessaire.
+             Ici, "bloc-img" est probablement utilisé en CSS pour cadrer
+             et mettre en forme uniquement la zone de l'image. -->
+
+            <img src="./image1.jpg" alt="machine à écrire" class="img-responsive">
+            <!-- <img> : Affiche une image.
+                 src="./image1.jpg" → chemin vers l'image (même dossier).
+                 alt="machine à écrire" → description de l'image.
+                     Ici le alt est bien renseigné, contrairement à l'exemple précédent !
+                     Utile si l'image ne charge pas, et pour l'accessibilité.
+                 class="img-responsive" → classe CSS appliquée à l'image.
+                     En CSS, cette classe contiendra probablement :
+                     width: 100%; height: auto;
+                     pour que l'image s'adapte à la largeur de son conteneur. -->
+
         </div>
+        <!-- Fermeture du div "bloc-img" -->
+
+        <h3>Leçons d'édition de nouvelles</h3>
+        <!-- <h3> : Titre de niveau 3.
+             Ici il joue le rôle de titre de la "carte",
+             comme le titre d'un article ou d'une vignette. -->
+
+        <hr>
+        <!-- Ligne de séparation horizontale entre le titre et les liens. -->
+
+        <a href="">Découvrir la séance</a>
+        <a href="">Retour à l'accueil</a>
+        <!-- <a> : Balise "anchor" (ancre), elle crée un LIEN CLIQUABLE.
+             href="" → l'URL de destination du lien.
+                 Ici href est vide : le lien ne mène nulle part.
+                 En production, on y mettrait l'adresse réelle :
+                 ex: href="https://monsite.com/seance" ou href="./seance.html"
+             
+             Le texte entre <a> et </a> est ce qui s'affiche et devient cliquable.
+             Par défaut, le navigateur l'affiche en bleu souligné.
+             
+            Autres attributs utiles de <a> :
+                 target="_blank" → ouvre le lien dans un nouvel onglet.
+                 title="..." → info-bulle au survol. -->
+
+        <p>Lorem ipsum dolor sit amet consectetur...</p>
+        <!-- <p> : Paragraphe de texte descriptif de la carte.
+             "Lorem ipsum" = texte de remplissage provisoire,
+             à remplacer par le vrai contenu. -->
+
+    </div>
+    <!-- Fermeture du div principal "carte-img".
+        Bien vérifier que chaque <div> ouvrant a son </div> fermant,
+         les oublis de fermeture sont une erreur très fréquente chez les débutants ! -->
+
 </body>
 </html>
 <!-- Fermeture de la balise <html> : fin du document.
