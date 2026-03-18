@@ -1,32 +1,139 @@
+/* =============================================
+   RAPPEL : En CSS, on cible des éléments HTML
+   pour leur appliquer des styles.
+   La syntaxe est toujours :
+   selecteur { propriété: valeur; }
+   ============================================= */
+
 body {
     height: 100vh;
+    /* body : cible la balise <body>, donc toute la page.
+       height: 100vh → donne à la page une hauteur de 100% de l'écran.
+       "vh" = "viewport height" (hauteur de la fenêtre du navigateur).
+       100vh = exactement la hauteur visible de l'écran, peu importe l'appareil.
+       💡 Différence avec 100% : 100% dépend du parent,
+          100vh dépend toujours de la fenêtre du navigateur. */
 }
+
+/* ---- CARTE PRINCIPALE ---- */
 .carte-img {
+    /* "." devant le nom = on cible une CLASSE HTML.
+       Ici on cible tous les éléments qui ont class="carte-img" dans le HTML. */
+
     width: 600px;
+    /* Largeur fixe de 600 pixels.
+       ⚠️ Une valeur fixe en "px" n'est pas responsive :
+       sur un petit écran, la carte pourrait dépasser.
+       Pour du responsive, on préférerait max-width: 600px; */
+
     height: auto;
+    /* La hauteur s'ajuste automatiquement selon le contenu.
+       Pas de hauteur fixe imposée : la carte grandit si le texte est long. */
+
     background: #f1f1f1;
+    /* Couleur de fond de la carte.
+       #f1f1f1 = un gris très clair (code couleur hexadécimal).
+       💡 Les codes hexa vont de #000000 (noir) à #ffffff (blanc). */
+
     border: 1px solid #333;
+    /* Bordure autour de la carte. C'est un raccourci (shorthand) pour 3 valeurs :
+       1px   → épaisseur de la bordure
+       solid → style : trait plein (autres options : dashed, dotted…)
+       #333  → couleur : gris foncé (raccourci de #333333) */
 }
+
+/* ---- BLOC IMAGE ---- */
 .block-img {
+    /* ⚠️ ATTENTION : en HTML la classe est "bloc-img" (avec un "c"),
+       ici en CSS c'est "block-img" (avec un "k").
+       Cette règle CSS ne s'appliquera donc PAS à l'élément HTML !
+       C'est une erreur de nommage typique du débutant : HTML et CSS
+       doivent avoir exactement le même nom de classe. */
+
     height: 70%;
+    /* Hauteur de 70% par rapport à son élément parent (.carte-img).
+       Cela réserve 70% de la hauteur de la carte pour l'image. */
+
     width: 100%;
+    /* Largeur de 100% du parent : le bloc image prend toute la largeur de la carte. */
+
     overflow: hidden;
+    /* Très important pour les images !
+       Si l'image est plus grande que son conteneur, overflow: hidden
+       va COUPER ce qui dépasse, au lieu de laisser l'image déborder.
+       C'est la technique classique pour recadrer une image en CSS. */
 }
+
+/* ---- IMAGE RESPONSIVE ---- */
 .img-responsive {
     width: 100%;
+    /* L'image prend 100% de la largeur de son conteneur (.block-img).
+       Elle s'adapte automatiquement si la carte change de taille. */
+
     height: auto;
+    /* La hauteur se calcule automatiquement pour conserver
+       les proportions originales de l'image (ratio largeur/hauteur).
+       Sans ça, l'image pourrait être étirée ou écrasée. */
 }
+
+/* ---- TITRE H3 DANS LA CARTE ---- */
 .carte-img h3 {
     padding: 10px;
+    /* Sélecteur "descendant" : cible uniquement les <h3>
+       qui sont À L'INTÉRIEUR d'un élément .carte-img.
+       Un <h3> ailleurs sur la page ne sera PAS affecté.
+
+       padding: 10px → ajoute un espace intérieur de 10px
+       sur les 4 côtés (haut, droite, bas, gauche) du titre.
+       
+       💡 Différence padding / margin :
+          padding = espace INTÉRIEUR (entre le texte et la bordure)
+          margin  = espace EXTÉRIEUR (entre la bordure et les autres éléments) */
 }
+
+/* ---- PARAGRAPHE DANS LA CARTE ---- */
 .carte-img p {
     padding: 0 10px 10px 10px;
+    /* Raccourci pour définir 4 valeurs de padding différentes.
+       L'ordre est toujours : haut → droite → bas → gauche
+       (comme une horloge, dans le sens des aiguilles)
+       
+       0        → haut   : pas d'espace en haut
+       10px     → droite : 10px à droite
+       10px     → bas    : 10px en bas
+       10px     → gauche : 10px à gauche
+       
+       💡 Autres raccourcis utiles :
+          padding: 10px          → 10px sur les 4 côtés
+          padding: 10px 20px     → 10px haut/bas, 20px gauche/droite
+          padding: 5px 10px 15px → 5px haut, 10px gauche/droite, 15px bas */
 }
+
+/* ---- LIGNE DE SÉPARATION DANS LA CARTE ---- */
 .carte-img hr {
     margin-bottom: 15px;
+    /* Ajoute 15px d'espace EXTÉRIEUR sous la ligne <hr>.
+       Cela écarte visuellement le <hr> des liens <a> qui suivent.
+       margin-bottom agit uniquement sur le côté bas, les autres côtés ne changent pas. */
 }
+
+/* ---- LIENS DANS LA CARTE ---- */
 .carte-img a {
     padding: 0 10px;
+    /* Raccourci à 2 valeurs :
+       0    → haut et bas : pas d'espace vertical
+       10px → gauche et droite : 10px d'espace horizontal
+       Cela donne de l'air autour du texte du lien. */
+
     color: #333;
+    /* Couleur du texte du lien : gris foncé.
+       Par défaut, les liens sont bleus (#0000ff).
+       Ici on écrase ce style par défaut du navigateur. */
+
     text-decoration: none;
+    /* Supprime le soulignement automatique des liens.
+       Par défaut, tous les <a> sont soulignés par le navigateur.
+       text-decoration: none → on l'enlève pour un rendu plus propre.
+       💡 On peut aussi utiliser text-decoration: underline pour forcer
+          le soulignement, ou overline, line-through (texte barré)… */
 }
